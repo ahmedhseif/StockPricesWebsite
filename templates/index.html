@@ -1,0 +1,25 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+
+{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block title %}Stock Market Prices{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
+  <h1 class="display-4">Stock Market Prices Search 📈</h1>
+  <hr class="hr">
+    <form action="{{ url_for('prices') }}" method="post" enctype="multipart/form-data">
+        <input class="form-control" id="symbol" name="symbol" placeholder="Enter a market symbol">
+        <hr class="hr">
+        <button class="btn btn-warning btn-lg" type="submit">Search</button>
+    </form>
+
+</div>
+    </div>
+
+{% endblock %}
